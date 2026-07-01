@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramadan Hweedy | UGC Creator · Video Editor · Content Producer</title>
+<link rel="preload" as="image" href="assets/images/extracted-image-1.webp">
+
+    <meta name="description" content="Ramadan Hweedy Portfolio - UGC Creator, Video Editor, Content Producer">
+    <meta property="og:title" content="Ramadan Hweedy | Portfolio">
+    <meta property="og:description" content="UGC Creator, Video Editor, and Content Producer showcasing featured works and results.">
+    <meta property="og:image" content="assets/images/extracted-image-1.webp">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="assets/images/extracted-image-1.webp" type="image/webp">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    
+
+    <!-- Theme Initialization to prevent FOUC -->
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
+
+    <style>
+        :root {
+            --cursor-x: 50%;
+            --cursor-y: 50%;
+        }
+
+        body { 
+            overflow-x: hidden; 
+            cursor: none; 
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Arabic / RTL support */
+        html[lang="ar"] body {
+            font-family: 'Cairo', 'Plus Jakarta Sans', sans-serif;
+            cursor: auto;
+        }
+        html[lang="ar"] * { letter-spacing: normal !important; }
+        html[dir="rtl"] h1 { margin-bottom: 1.4rem !important; }
+        html[dir="rtl"] h1 + p { margin-top: 0.8rem !important; margin-bottom: 1.8rem !important; }
+        html[dir="rtl"] #hero-section p.text-sm,
+        html[dir="rtl"] #hero-section p.text-lg { margin-bottom: 2rem !important; }
+        /* Mobile nav offset */
+        @media (max-width: 767px) {
+            #hero-section { padding-top: 6rem !important; }
+        }
+        html[lang="ar"] .ph, html[lang="ar"] .ph-fill, html[lang="ar"] .ph-bold { direction: ltr; }
+        html[lang="ar"] .cursor-dot, html[lang="ar"] .cursor-outline { display: none; }
+        html[dir="rtl"] .space-x-1 > * + * { margin-right: 0.25rem; margin-left: 0; }
+        html[dir="rtl"] .flex.gap-2.mt-1 { direction: ltr; justify-content: flex-end; }
+        
+        /* Custom Cursor */
+        .cursor-dot {
+            position: fixed;
+            top: 0; left: 0;
+            width: 8px; height: 8px;
+            background-color: #628440; /* olive-500 */
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(calc(var(--cursor-x) - 50%), calc(var(--cursor-y) - 50%));
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+        }
+        .cursor-outline {
+            position: fixed;
+            top: 0; left: 0;
+            width: 40px; height: 40px;
+            border: 1px solid rgba(98, 132, 64, 0.5); /* olive-500 */
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
+            transform: translate(calc(var(--cursor-x) - 50%), calc(var(--cursor-y) - 50%));
+            transition: transform 0.15s ease-out, width 0.2s, height 0.2s, border-color 0.2s;
+        }
+        body:hover .cursor-dot, body:hover .cursor-outline { opacity: 1; }
+        
+        /* Interactive States for Cursor */
+        a:hover ~ .cursor-outline, button:hover ~ .cursor-outline, .interactive-hover:hover ~ .cursor-outline {
+            width: 60px; height: 60px;
+            border-color: #81a25e; /* olive-400 */
+            background-color: rgba(98, 132, 64, 0.1);
+        }
+        a:hover ~ .cursor-dot, button:hover ~ .cursor-dot, .interactive-hover:hover ~ .cursor-dot {
+            background-color: #81a25e;
+            width: 12px; height: 12px;
+        }
+
+        /* Glassmorphism & Borders */
+        .glass-nav {
+            background: rgba(248, 250, 252, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .dark .glass-nav {
+            background: rgba(5, 5, 5, 0.7);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+        
+        /* Spotlight Card Effect (Adapts to Light/Dark) */
+        .spotlight-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05);
+        }
+        .dark .spotlight-card {
+            background: rgba(15, 23, 42, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: none;
+        }
+        
+        .spotlight-card::before {
+            content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px;
+            background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(98, 132, 64, 0.6), transparent 40%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor; mask-composite: exclude;
+            pointer-events: none; opacity: 0; transition: opacity 0.5s ease;
+        }
+        .spotlight-card:hover::before { opacity: 1; }
+        
+        .spotlight-card::after {
+            content: ""; position: absolute; inset: 0;
+            background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(98, 132, 64, 0.05), transparent 40%);
+            pointer-events: none; opacity: 0; transition: opacity 0.5s ease;
+        }
+        .dark .spotlight-card::after {
+            background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(129, 162, 94, 0.08), transparent 40%);
+        }
+        .spotlight-card:hover::after { opacity: 1; }
+        
+        .spotlight-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 20px 40px -10px rgba(98, 132, 64, 0.15);
+        }
+        .dark .spotlight-card:hover {
+            background: rgba(15, 23, 42, 0.5);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Typography Gradients */
+        .text-gradient {
+            background: linear-gradient(135deg, #81a25e 0%, #4c6830 50%, #a6c188 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: text-shine 4s linear infinite;
+        }
+        
+        @keyframes text-shine {
+            to { background-position: 200% center; }
+        }
+
+        /* Abstract Backgrounds */
+        .aurora-bg {
+            position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: 
+                radial-gradient(circle at 50% 50%, rgba(98, 132, 64, 0.08), transparent 40%),
+                radial-gradient(circle at 80% 20%, rgba(129, 162, 94, 0.05), transparent 30%),
+                radial-gradient(circle at 20% 80%, rgba(166, 193, 136, 0.08), transparent 40%);
+            filter: blur(80px); pointer-events: none; z-index: 0;
+            animation: aurora 20s ease infinite alternate;
+        }
+        .dark .aurora-bg {
+            background: 
+                radial-gradient(circle at 50% 50%, rgba(98, 132, 64, 0.15), transparent 40%),
+                radial-gradient(circle at 80% 20%, rgba(129, 162, 94, 0.1), transparent 30%),
+                radial-gradient(circle at 20% 80%, rgba(76, 104, 48, 0.15), transparent 40%);
+        }
+
+        #hero-canvas {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 1; pointer-events: auto; opacity: 0.5;
+        }
+        .dark #hero-canvas { opacity: 0.4; }
+
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+    </style>
+</head>
+<body class="antialiased bg-slate-50 text-slate-900 dark:bg-[#050505] dark:text-slate-50 selection:bg-olive-500 selection:text-white transition-colors duration-300">
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot hidden md:block"></div>
+    <div class="cursor-outline hidden md:block"></div>
+
+    <!-- 1. Sticky Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-14">
+                
+                <!-- Logo Area -->
+                <a href="#" class="flex-shrink-0 flex items-center gap-3 interactive-hover group">
+                    <div class="w-16 h-16 rounded-xl bg-transparent flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:scale-105">
+                        <img loading="lazy" src="assets/images/extracted-image-1.webp" alt="Ramadan Logo" class="w-full h-full object-cover" width="300" height="300">
+                    </div>
+                    <span class="font-extrabold text-lg sm:text-2xl tracking-tight text-slate-900 dark:text-white" data-en="Ramadan" data-ar="رمضان">Ramadan</span>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-1 p-1.5 bg-white/50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-full backdrop-blur-xl shadow-sm">
+                    <a href="#services" class="px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-olive-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10 rounded-full transition-all" data-en="Services" data-ar="الخدمات">Services</a>
+                    <a href="#results" class="px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-olive-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10 rounded-full transition-all" data-en="Results" data-ar="النتائج">Results</a>
+                    <a href="#workflow" class="px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-olive-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10 rounded-full transition-all" data-en="Workflow" data-ar="طريقة العمل">Workflow</a>
+                    <a href="#packages" class="px-5 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-olive-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10 rounded-full transition-all" data-en="Packages" data-ar="الباقات">Packages</a>
+                </div>
+
+                <!-- Right Actions (Lang Toggle + Theme Toggle + Portfolio Link) -->
+                <div class="hidden md:flex items-center gap-3">
+                    <!-- Language Toggle Button -->
+                    <button id="lang-toggle" class="px-3.5 h-10 rounded-full bg-white/50 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:bg-slate-200 dark:hover:bg-white/10 transition-colors shadow-sm interactive-hover flex items-center gap-1.5 text-xs font-extrabold tracking-wide text-slate-600 dark:text-slate-300">
+                        <i class="ph-bold ph-translate text-base"></i>
+                        <span id="lang-toggle-label">AR</span>
+                    </button>
+                    <!-- Theme Toggle Button -->
+                    <button id="theme-toggle" class="p-2.5 rounded-full bg-white/50 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:bg-slate-200 dark:hover:bg-white/10 transition-colors shadow-sm interactive-hover">
+                        <i id="theme-toggle-dark-icon" class="ph-fill ph-moon hidden text-slate-600 text-lg"></i>
+                        <i id="theme-toggle-light-icon" class="ph-fill ph-sun hidden text-amber-400 text-lg"></i>
+                    </button>
+                    
+                    <!-- Portfolio Link (Linktree) -->
+                    <a href="https://linktr.ee/ramadanzsc" target="_blank" class="interactive-hover relative group px-5 py-2.5 font-bold text-white rounded-full overflow-hidden shadow-md">
+                        <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-olive-600 to-olive-400 opacity-90 group-hover:opacity-100 transition-opacity"></span>
+                        <span class="relative flex items-center gap-2 text-sm"><i class="ph-bold ph-link-simple text-lg"></i> <span data-en="Portfolio" data-ar="البورتفوليو">Portfolio</span></span>
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center gap-2">
+                    <button id="lang-toggle-mobile" class="px-2.5 h-9 rounded-full bg-slate-200 dark:bg-white/5 text-xs font-extrabold text-slate-600 dark:text-slate-300">
+                        <span id="lang-toggle-label-mobile">AR</span>
+                    </button>
+                    <button id="theme-toggle-mobile" class="p-2 rounded-full bg-slate-200 dark:bg-white/5">
+                        <i id="theme-toggle-dark-icon-mobile" class="ph-fill ph-moon hidden text-slate-600"></i>
+                        <i id="theme-toggle-light-icon-mobile" class="ph-fill ph-sun hidden text-amber-400"></i>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. Hero Section with Aurora & Canvas -->
+    <section class="relative flex items-center pt-24 pb-4 md:min-h-[100svh] md:pt-24 md:pb-12 overflow-hidden" id="hero-section">
+        <!-- Abstract Backgrounds -->
+        <div class="aurora-bg"></div>
+        <canvas id="hero-canvas"></canvas>
+        <!-- Gradient Overlay adjusts based on theme -->
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-50/40 via-slate-50/80 to-slate-50 dark:from-obsidian/40 dark:via-obsidian/80 dark:to-obsidian z-[2] transition-colors duration-300"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid lg:grid-cols-12 lg:gap-12 items-center">
+            
+            <!-- Left Text Content -->
+            <div class="lg:col-span-7 text-left pt-2 sm:pt-6 lg:pt-10">
+                <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-olive-500/10 border border-olive-500/30 backdrop-blur-md mb-8 shadow-sm" data-aos="fade-down">
+                    <span class="relative flex h-2.5 w-2.5">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-olive-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-olive-500"></span>
+                    </span>
+                    <span class="text-xs font-bold text-olive-600 dark:text-olive-400 tracking-widest uppercase">Accepting New Projects</span>
+                </div>
+                
+                <h1 class="text-3xl sm:text-5xl md:text-7xl lg:text-[4.7rem] font-extrabold tracking-tighter text-slate-900 dark:text-white mb-4 sm:mb-5 leading-[1.1]" data-aos="fade-up" data-aos-delay="100">
+                    <span data-en="Ramadan Hweedy" data-ar="رمضان هويدي">Ramadan Hweedy</span>
+                </h1>
+                <p class="text-[10px] sm:text-sm md:text-base font-extrabold tracking-[0.1em] sm:tracking-[0.2em] uppercase text-olive-600 dark:text-olive-400 mt-3 mb-6" data-aos="fade-up" data-aos-delay="150">
+                    <span data-en="UGC Creator · Video Editor · Content Producer" data-ar="صانع محتوى UGC · مونتير فيديو · منتج محتوى">UGC Creator · Video Editor · Content Producer</span>
+                </p>
+                
+                <p class="text-sm md:text-2xl text-slate-600 dark:text-slate-400 max-w-2xl mb-8 leading-relaxed font-light" data-aos="fade-up" data-aos-delay="200" data-en="UGC Creator and Video Editor producing high-performing short-form content for product, medical, and service-based brands." data-ar="صانع محتوى UGC ومونتير فيديو، بقدم محتوى قصير عالي الأداء للبراندات في مجالات المنتجات والطب والخدمات.">
+                    UGC Creator and Video Editor producing high-performing short-form content for product, medical, and service-based brands.
+                </p>
+                
+                <div class="flex flex-row flex-wrap items-center justify-center gap-2 mb-10 md:mb-16" data-aos="fade-up" data-aos-delay="300">
+                    <a href="https://linktr.ee/ramadanzsc" target="_blank" class="px-4 py-2.5 text-sm font-bold text-white bg-olive-600 hover:bg-olive-700 rounded-full transition-all duration-300 shadow-lg shadow-olive-600/30 flex items-center justify-center gap-2 group">
+                        <i class="ph-bold ph-link-simple text-lg"></i> <span data-en="View Portfolio" data-ar="شاهد البورتفوليو">View Portfolio</span>
+                    </a>
+                    <a href="#packages" class="px-4 py-2.5 text-sm font-bold text-slate-700 dark:text-white bg-white/50 dark:bg-white/10 hover:bg-slate-200 dark:hover:bg-white/20 border border-slate-300 dark:border-white/20 rounded-full transition-all duration-300 backdrop-blur-md flex items-center justify-center gap-2 interactive-hover">
+                        <span data-en="View Packages" data-ar="شاهد الباقات">View Packages</span>
+                    </a>
+                    <a href="https://www.instagram.com/freedaan_20" target="_blank" class="px-4 py-2.5 text-sm font-bold text-white bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 rounded-full transition-all duration-300 shadow-lg shadow-pink-500/20 flex items-center justify-center gap-2">
+                        <i class="ph-fill ph-instagram-logo text-xl"></i> <span data-en="DM for Work" data-ar="راسلني للعمل">DM for Work</span>
+                    </a>
+                </div>
+
+                <!-- Stats -->
+                <div class="flex items-center gap-4 sm:gap-8 pt-6 sm:pt-8 border-t border-slate-300 dark:border-white/10 flex-wrap" data-aos="fade-up" data-aos-delay="400">
+                    <div>
+                        <p class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-1 tracking-tight">500<span class="text-olive-500">+</span></p>
+                        <p class="text-[9px] sm:text-xs text-slate-500 uppercase tracking-widest font-bold" data-en="Videos Produced" data-ar="فيديو تم إنتاجه">Videos Produced</p>
+                    </div>
+                    <div class="w-px h-12 bg-slate-300 dark:bg-white/10"></div>
+                    <div>
+                        <p class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-1 tracking-tight">2<span class="text-olive-400">Yr</span></p>
+                        <p class="text-[9px] sm:text-xs text-slate-500 uppercase tracking-widest font-bold" data-en="Years Experience" data-ar="سنوات خبرة">Years Experience</p>
+                    </div>
+                    <div class="w-px h-12 bg-slate-300 dark:bg-white/10"></div>
+                    <div>
+                        <p class="text-2xl sm:text-4xl font-extrabold text-olive-500 mb-1 tracking-tight">Millions</p>
+                        <p class="text-[9px] sm:text-xs text-slate-500 uppercase tracking-widest font-bold" data-en="Of Views" data-ar="مشاهدة">Of Views</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Visual Graphic (Animated Editor UI) -->
+            <div class="lg:col-span-5 relative hidden lg:block lg:h-[600px]" data-aos="fade-left" data-aos-delay="500">
+                <div class="absolute right-0 top-1/2 -translate-y-1/2 w-full max-w-[340px] rounded-2xl p-1.5 border border-slate-200 dark:border-white/10 bg-white/80 dark:bg-obsidian/60 backdrop-blur-2xl shadow-xl dark:shadow-[0_0_50px_rgba(98,132,64,0.15)] z-10 animate-float spotlight-card overflow-hidden group cursor-pointer" onclick="const v = this.querySelector('video'); const icon = this.querySelector('.play-icon'); if(v.paused){v.play(); icon.classList.replace('ph-play', 'ph-pause');}else{v.pause(); icon.classList.replace('ph-pause', 'ph-play');}">
+                    <!-- Video Container -->
+                    <div class="relative rounded-xl overflow-hidden bg-slate-900 aspect-[9/16] w-full flex items-center justify-center">
+                        <video 
+                            src="assets/videos/hero-loop.mp4" 
+                            autoplay 
+                            loop 
+                            muted 
+                            playsinline
+                            class="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        ></video>
+                        <!-- Play/Pause Indicator -->
+                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                            <i class="play-icon ph-fill ph-pause text-white text-5xl opacity-80 drop-shadow-lg transition-all transform scale-90 group-hover:scale-100"></i>
+                        </div>
+                        <!-- Sound Toggle Button -->
+                        <button class="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-black/50 hover:bg-black/80 backdrop-blur-md flex items-center justify-center text-white transition-colors z-20 border border-white/20" onclick="event.stopPropagation(); const v = this.closest('.group').querySelector('video'); const icon = this.querySelector('i'); v.muted = !v.muted; if(v.muted){ icon.classList.replace('ph-speaker-high', 'ph-speaker-none'); } else { icon.classList.replace('ph-speaker-none', 'ph-speaker-high'); }">
+                            <i class="ph-fill ph-speaker-none text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- Decorative blobs -->
+                <div class="absolute -bottom-6 -right-6 w-48 h-48 bg-olive-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -top-6 -left-6 w-32 h-32 bg-olive-400/10 rounded-full blur-2xl pointer-events-none"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 3. Ticker Tape Brands -->
+    <section class="py-8 border-y border-slate-200 dark:border-white/5 bg-slate-100/50 dark:bg-white/[0.02] backdrop-blur-md relative z-20" id="brands">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 mb-4">
+            <p class="text-xs font-bold text-slate-500 text-center uppercase tracking-[0.2em]">Trusted by incredible brands & creators</p>
+        </div>
+        <div class="overflow-hidden whitespace-nowrap relative flex">
+            <!-- Fade gradients -->
+            <div class="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-slate-50 dark:from-obsidian to-transparent z-10 pointer-events-none transition-colors duration-300"></div>
+            <div class="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-slate-50 dark:from-obsidian to-transparent z-10 pointer-events-none transition-colors duration-300"></div>
+            
+            <!-- Marquee Content -->
+            <div class="flex gap-16 items-center animate-marquee opacity-60 hover:opacity-100 dark:opacity-50 dark:hover:opacity-100 transition-opacity duration-500 w-[200%]">
+                <span class="text-2xl font-extrabold text-slate-800 dark:text-white flex items-center gap-3 tracking-tight"><img loading="lazy" src="assets/images/extracted-image-2.webp" class="w-9 h-9 rounded-full object-cover inline-block align-middle" width="215" height="220"> Elite Perfumes</span>
+                <span class="text-2xl font-extrabold text-slate-800 dark:text-white flex items-center gap-3 tracking-tight"><img loading="lazy" src="assets/images/extracted-image-3.webp" class="w-9 h-9 rounded-full object-cover inline-block align-middle" width="220" height="220"> Ghabbor Academy</span>
+                <span class="text-2xl font-extrabold text-slate-800 dark:text-white flex items-center gap-3 tracking-tight"><img loading="lazy" src="assets/images/extracted-image-4.webp" class="w-9 h-9 rounded-full object-cover inline-block align-middle" width="220" height="184"> Halwani El-Shahd</span>
+                <span class="text-2xl font-extrabold text-slate-800 dark:text-white flex items-center gap-3 tracking-tight"><img loading="lazy" src="assets/images/extracted-image-5.webp" class="w-9 h-9 rounded-full object-cover inline-block align-middle" width="220" height="219"> Day by Day</span>
+                <span class="text-2xl font-extrabold text-slate-800 dark:text-white flex items-center gap-3 tracking-tight"><img loading="lazy" src="assets/images/extracted-image-6.webp" class="w-9 h-9 rounded-full object-cover inline-block align-middle" width="220" height="220"> Fit X Gym</span>
+                <span class="text-2xl font-extrabold text-slate-800 dark:text-white flex items-center gap-3 tracking-tight"><i class="ph-fill ph-user-circle text-blue-500"></i> Soheil El Shamy</span>
+                <span class="text-2xl font-extrabold text-slate-800 dark:text-white flex items-center gap-3 tracking-tight"><i class="ph-fill ph-video text-green-500"></i> That's Mohamed</span>
+                
+                <!-- Duplicate -->
+                <span class="text-2xl font-extrabold text-slate-800 dark:text-white flex items-center gap-3 tracking-tight ml-16"><img loading="lazy" src="assets/images/extracted-image-2.webp" class="w-9 h-9 rounded-full object-cover inline-block align-middle" width="215" height="220"> Elite Perfumes</span>
+                <span class="text-2xl font-extrabold text-slate-800 dark:text-white flex items-center gap-3 tracking-tight"><img loading="lazy" src="assets/images/extracted-image-3.webp" class="w-9 h-9 rounded-full object-cover inline-block align-middle" width="220" height="220"> Ghabbor Academy</span>
+                <span class="text-2xl font-extrabold text-slate-800 dark:text-white flex items-center gap-3 tracking-tight"><img loading="lazy" src="assets/images/extracted-image-4.webp" class="w-9 h-9 rounded-full object-cover inline-block align-middle" width="220" height="184"> Halwani El-Shahd</span>
+                <span class="text-2xl font-extrabold text-slate-800 dark:text-white flex items-center gap-3 tracking-tight"><img loading="lazy" src="assets/images/extracted-image-5.webp" class="w-9 h-9 rounded-full object-cover inline-block align-middle" width="220" height="219"> Day by Day</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Services Grid -->
+    <section id="services" class="py-10 md:py-32 relative z-20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16" data-aos="fade-up">
+                <div class="max-w-2xl">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="h-px w-8 bg-olive-500"></div>
+                        <h2 class="text-xs font-bold text-olive-600 dark:text-olive-400 tracking-[0.2em] uppercase" data-en="My Expertise" data-ar="خبرتي">My Expertise</h2>
+                    </div>
+                    <h3 class="text-4xl md:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight" data-en="More Effective." data-ar="الأكثر فعالية.">More Effective.</h3>
+                </div>
+                <p class="text-lg text-slate-600 dark:text-slate-400 max-w-md font-light leading-relaxed" data-en="Comprehensive content solutions tailored for brands, tech startups, and medical professionals." data-ar="حلول محتوى شاملة مصممة للبراندات، شركات التكنولوجيا الناشئة، والمتخصصين الطبيين.">Comprehensive content solutions tailored for brands, tech startups, and medical professionals.</p>
+            </div>
+
+            <!-- Bento Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 auto-rows-auto md:auto-rows-[minmax(250px,auto)]">
+                
+                <div class="md:col-span-2 spotlight-card p-6 md:p-10 flex flex-col justify-between group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 rounded-2xl bg-olive-100 dark:bg-white/5 border border-olive-200 dark:border-white/10 flex items-center justify-center mb-4 md:mb-8 group-hover:scale-110 transition-transform duration-500">
+                        <i class="ph-fill ph-package text-4xl text-olive-600 dark:text-olive-400"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-3xl font-extrabold text-slate-900 dark:text-white mb-4 tracking-tight" data-en="Product Content" data-ar="محتوى المنتجات">Product Content</h4>
+                        <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed max-w-md" data-en="High-converting UGC ads tailored for physical goods, designed to stop the scroll and drive measurable sales." data-ar="إعلانات UGC عالية التحويل للمنتجات المادية، مصممة توقف السكرول وتحقق مبيعات حقيقية.">High-converting UGC ads tailored for physical goods, designed to stop the scroll and drive measurable sales.</p>
+                    </div>
+                </div>
+
+                <div class="md:col-span-2 spotlight-card p-6 md:p-10 flex flex-col justify-between group relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute right-0 bottom-0 opacity-5 dark:opacity-10 pointer-events-none translate-x-1/4 translate-y-1/4 group-hover:scale-110 transition-transform duration-700">
+                        <i class="ph-fill ph-video text-[200px] text-slate-900 dark:text-white"></i>
+                    </div>
+                    <div class="w-16 h-16 rounded-2xl bg-olive-600 text-white border border-olive-500 flex items-center justify-center mb-8 relative z-10 group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                        <i class="ph-fill ph-scissors text-4xl"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <h4 class="text-3xl font-extrabold text-slate-900 dark:text-white mb-4 tracking-tight" data-en="Video Editing Pipeline" data-ar="خط إنتاج المونتاج">Video Editing Pipeline</h4>
+                        <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed max-w-md" data-en="Edit-only services. Send me your raw footage, and I'll deliver polished, fast-paced, retention-optimized videos with motion graphics and SFX." data-ar="خدمات مونتاج فقط. ابعتلي الفيديو الخام، وهسلمك فيديو احترافي سريع الإيقاع ومحسن للاحتفاظ بالمشاهد مع موشن جرافيك ومؤثرات صوتية.">Edit-only services. Send me your raw footage, and I'll deliver polished, fast-paced, retention-optimized videos with motion graphics and SFX.</p>
+                    </div>
+                </div>
+                
+                <div class="spotlight-card p-6 md:p-10 flex flex-col justify-between group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 rounded-2xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center justify-center mb-4 md:mb-8 group-hover:scale-110 transition-transform duration-500">
+                        <i class="ph-fill ph-device-mobile text-3xl text-amber-500"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-extrabold text-slate-900 dark:text-white mb-3 tracking-tight" data-en="Apps & Tech" data-ar="التطبيقات والتكنولوجيا">Apps & Tech</h4>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-en="Engaging reviews, feature demos, and promotional ads for digital products." data-ar="ريفيوهات جذابة، عرض مميزات، وإعلانات ترويجية للمنتجات الرقمية.">Engaging reviews, feature demos, and promotional ads for digital products.</p>
+                    </div>
+                </div>
+
+                <div class="spotlight-card p-6 md:p-10 flex flex-col justify-between group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-14 h-14 rounded-2xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center justify-center mb-4 md:mb-8 group-hover:scale-110 transition-transform duration-500">
+                        <i class="ph-fill ph-paint-brush text-3xl text-cyan-600 dark:text-cyan-400"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-extrabold text-slate-900 dark:text-white mb-3 tracking-tight" data-en="Graphic Design" data-ar="التصميم الجرافيكي">Graphic Design</h4>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-en="Eye-catching posters, click-worthy thumbnails, and aesthetic visual assets." data-ar="بوسترات لافتة، ثامبنيلات تجذب الكليك، وعناصر بصرية جمالية.">Eye-catching posters, click-worthy thumbnails, and aesthetic visual assets.</p>
+                    </div>
+                </div>
+
+                <div class="spotlight-card p-6 md:p-10 flex flex-col justify-between group" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-14 h-14 rounded-2xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center justify-center mb-4 md:mb-8 group-hover:scale-110 transition-transform duration-500">
+                        <i class="ph-fill ph-heartbeat text-3xl text-red-500"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-extrabold text-slate-900 dark:text-white mb-3 tracking-tight" data-en="Medical Content" data-ar="المحتوى الطبي">Medical Content</h4>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-en="Specialized strategy & editing for health professionals and clinics." data-ar="استراتيجية ومونتاج متخصص للمتخصصين الطبيين والعيادات.">Specialized strategy & editing for health professionals and clinics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4.5 Client Results Section -->
+    <section id="results" class="py-10 md:py-24 bg-slate-100 dark:bg-[#0a0a0a] border-y border-slate-200 dark:border-white/5 relative z-20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h3 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-4" data-en="Client Success & Results." data-ar="نجاح العملاء والنتائج.">Client Success & Results.</h3>
+                <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-light" data-en="Data-driven content that doesn't just look good, but actually performs and converts." data-ar="محتوى مبني على بيانات حقيقية — مش بس شكله حلو، فعلاً بيحقق نتائج ومبيعات.">Data-driven content that doesn't just look good, but actually performs and converts.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Elite Perfumes -->
+                <div class="spotlight-card p-8 flex flex-col group border-2 border-olive-500 shadow-[0_0_30px_rgba(98,132,64,0.15)]" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-11 h-11 rounded-full bg-olive-100 dark:bg-olive-900/50 flex items-center justify-center overflow-hidden group-hover:scale-110 transition-transform shrink-0">
+                            <img loading="lazy" src="assets/images/extracted-image-2.webp" class="w-full h-full object-cover rounded-full" width="215" height="220">
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-olive-600 dark:text-olive-400 uppercase tracking-widest">Elite Perfumes</p>
+                            
+                        </div>
+                    </div>
+                    <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4" data-en="Product Content System · 2025—Present" data-ar="نظام محتوى للمنتج · ٢٠٢٥ - الآن">Product Content System · 2025—Present</p>
+                    <div class="grid grid-cols-3 gap-2 mb-4">
+                        <div><p class="text-2xl font-extrabold text-slate-900 dark:text-white leading-none">250+</p><p class="text-[10px] text-slate-500 uppercase tracking-wider mt-1" data-en="Videos" data-ar="فيديو">Videos</p></div>
+                        <div><p class="text-2xl font-extrabold text-slate-900 dark:text-white leading-none">+32K</p><p class="text-[10px] text-slate-500 uppercase tracking-wider mt-1" data-en="Followers" data-ar="متابع">Followers</p></div>
+                        <div><p class="text-2xl font-extrabold text-olive-600 dark:text-olive-400 leading-none" data-en="Millions" data-ar="ملايين">Millions</p><p class="text-[10px] text-slate-500 uppercase tracking-wider mt-1" data-en="Of Views" data-ar="مشاهدة">Of Views</p></div>
+                    </div>
+                    <p class="text-slate-600 dark:text-slate-400 text-xs flex-1 leading-relaxed" data-en="Built a repeatable content system spanning ideation, scripting, and execution — not a single isolated campaign." data-ar="بنينا نظام محتوى متكرر يشمل الأفكار والسكريبت والتنفيذ — مش مجرد حملة منفردة.">Built a repeatable content system spanning ideation, scripting, and execution — not a single isolated campaign.</p>
+                    <div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-slate-200 dark:border-white/5">
+                        <a href="https://www.facebook.com/nokhba.3tor" target="_blank" class="flex items-center gap-1.5 px-3 py-2 rounded-full bg-blue-600 text-white text-xs font-bold hover:opacity-90 transition-opacity">
+                            <i class="ph-fill ph-facebook-logo text-base"></i> Facebook
+                        </a>
+                        <a href="https://www.instagram.com/eliteperfume24" target="_blank" class="flex items-center gap-1.5 px-3 py-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs font-bold hover:opacity-90 transition-opacity">
+                            <i class="ph-fill ph-instagram-logo text-base"></i> Instagram
+                        </a>
+                        <a href="https://www.tiktok.com/@eliteperfume244" target="_blank" class="flex items-center gap-1.5 px-3 py-2 rounded-full bg-slate-900 text-white text-xs font-bold hover:opacity-90 transition-opacity">
+                            <i class="ph-fill ph-tiktok-logo text-base"></i> TikTok
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Ramadan Hweidy Personal Case -->
+                <div class="spotlight-card p-8 flex flex-col group" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-11 h-11 rounded-full bg-olive-100 dark:bg-olive-900/50 flex items-center justify-center overflow-hidden group-hover:scale-110 transition-transform shrink-0">
+                            <i class="ph-fill ph-video-camera text-xl text-olive-600 dark:text-olive-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-olive-600 dark:text-olive-400 uppercase tracking-widest">Ramadan Hweidy</p>
+                            
+                        </div>
+                    </div>
+                    <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4" data-en="Medical Content · Personal Channel · 2025—Present" data-ar="محتوى طبي · قناة شخصية · ٢٠٢٥ - الآن">Medical Content · Personal Channel · 2025—Present</p>
+                    <div class="grid grid-cols-2 gap-2 mb-4">
+                        <div><p class="text-3xl font-extrabold text-slate-900 dark:text-white leading-none">45+</p><p class="text-[10px] text-slate-500 uppercase tracking-wider mt-1" data-en="Videos" data-ar="فيديو">Videos</p></div>
+                        <div><p class="text-3xl font-extrabold text-olive-500 leading-none">1.5M+</p><p class="text-[10px] text-slate-500 uppercase tracking-wider mt-1" data-en="Total Views" data-ar="إجمالي المشاهدات">Total Views</p></div>
+                    </div>
+                    <p class="text-slate-600 dark:text-slate-400 text-xs flex-1 leading-relaxed" data-en="High-retention medical content built on clarity-first editing and structured information delivery." data-ar="محتوى طبي عالي الاحتفاظ بالمشاهد، مبني على مونتاج واضح وتنظيم للمعلومة.">High-retention medical content built on clarity-first editing and structured information delivery.</p>
+                    <div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-slate-200 dark:border-white/5">
+                        <a href="https://www.instagram.com/ramadan_hweedy20" target="_blank" class="flex items-center gap-1.5 px-3 py-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs font-bold hover:opacity-90 transition-opacity">
+                            <i class="ph-fill ph-instagram-logo text-base"></i> Instagram
+                        </a>
+                        <a href="https://youtube.com/@ramadan_hweedy20" target="_blank" class="flex items-center gap-1.5 px-3 py-2 rounded-full bg-red-600 text-white text-xs font-bold hover:opacity-90 transition-opacity">
+                            <i class="ph-fill ph-youtube-logo text-base"></i> YouTube
+                        </a>
+                    </div>
+                    
+                </div>
+
+                <!-- Halwani El-Shahd -->
+                <div class="spotlight-card p-8 flex flex-col group" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-11 h-11 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center overflow-hidden group-hover:scale-110 transition-transform shrink-0">
+                            <img loading="lazy" src="assets/images/extracted-image-4.webp" class="w-full h-full object-cover rounded-full" width="220" height="184">
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-widest">Halwani El-Shahd</p>
+
+                        </div>
+                    </div>
+                    <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4" data-en="Organic Reach · Food Content · 2026" data-ar="انتشار عضوي · محتوى أكل · ٢٠٢٦">Organic Reach · Food Content · 2026</p>
+                    <div class="grid grid-cols-3 gap-3 mb-4">
+                        <div><p class="text-2xl font-extrabold text-slate-900 dark:text-white leading-none">+350K</p><p class="text-[10px] text-slate-500 uppercase tracking-wider mt-1" data-en="Views" data-ar="مشاهدة">Views</p></div>
+                        <div><p class="text-2xl font-extrabold text-slate-900 dark:text-white leading-none">5</p><p class="text-[10px] text-slate-500 uppercase tracking-wider mt-1" data-en="Videos Only" data-ar="فيديوهات بس">Videos</p></div>
+                        <div><p class="text-2xl font-extrabold text-slate-900 dark:text-white leading-none">+3K</p><p class="text-[10px] text-slate-500 uppercase tracking-wider mt-1" data-en="Followers" data-ar="متابع">Followers</p></div>
+                    </div>
+                    <p class="text-slate-600 dark:text-slate-400 text-xs flex-1 leading-relaxed" data-en="Proof that the right hook and tight editing beat raw volume — strong hook creation and retention carried the whole run." data-ar="دليل إن الهوك الصح والمونتاج المظبوط بيتفوق على الكم — الهوك القوي والاحتفاظ بالمشاهد هما اللي عملوا الفرق.">Proof that the right hook and tight editing beat raw volume — strong hook creation and retention carried the whole run.</p>
+                </div>
+
+                <!-- Ghabbor Academy -->
+                <div class="spotlight-card p-8 flex flex-col group" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-11 h-11 rounded-full bg-cyan-100 dark:bg-cyan-900/30 flex items-center justify-center overflow-hidden group-hover:scale-110 transition-transform shrink-0">
+                            <img loading="lazy" src="assets/images/extracted-image-3.webp" class="w-full h-full object-cover rounded-full" width="220" height="220">
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-cyan-600 dark:text-cyan-400 uppercase tracking-widest">Ghabbor Academy</p>
+
+                        </div>
+                    </div>
+                    <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4" data-en="Organic Views · Education" data-ar="مشاهدات عضوية · تعليم">Organic Views · Education</p>
+                    <div class="mb-4">
+                        <p class="text-3xl font-extrabold text-slate-900 dark:text-white leading-none">150K</p>
+                        <p class="text-[10px] text-slate-500 uppercase tracking-wider mt-1" data-en="Organic Views" data-ar="مشاهدة عضوية">Organic Views</p>
+                    </div>
+                    <p class="text-slate-600 dark:text-slate-400 text-xs flex-1 leading-relaxed" data-en="Educational and course promotional content. Script-first approach built to stop the scroll and drive real sign-ups." data-ar="محتوى تعليمي وترويجي للكورسات. أسلوب مبني على السكريبت يوقف السكرول ويحقق تسجيلات حقيقية.">Educational and course promotional content. Script-first approach built to stop the scroll and drive real sign-ups.</p>
+                </div>
+            </div>
+
+            <!-- Proof Gallery: real screenshots -->
+            <div class="mt-14" data-aos="fade-up">
+                <div class="flex items-center gap-3 mb-6 justify-center">
+                    <div class="h-px w-8 bg-olive-500"></div>
+                    <p class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-[0.2em]" data-en="Real Performance Screenshots" data-ar="سكرين شوتس حقيقية من الأداء">Real Performance Screenshots</p>
+                    <div class="h-px w-8 bg-olive-500"></div>
+                </div>
+                <div class="overflow-hidden w-full relative py-4 -my-4">
+                    <div class="flex w-max gap-3 animate-marquee hover:[animation-play-state:paused]">
+                        <!-- Set 1 -->
+                        <img loading="lazy" src="assets/images/extracted-image-14.webp" class="w-28 md:w-36 flex-shrink-0 aspect-[9/16] object-cover rounded-xl border border-slate-200 dark:border-white/10 shadow-sm hover:scale-105 hover:z-10 transition-transform duration-300" alt="proof 1" width="420" height="733"> <img loading="lazy" src="assets/images/extracted-image-15.webp" class="w-28 md:w-36 flex-shrink-0 aspect-[9/16] object-cover rounded-xl border border-slate-200 dark:border-white/10 shadow-sm hover:scale-105 hover:z-10 transition-transform duration-300" alt="proof 2" width="420" height="767"> <img loading="lazy" src="assets/images/extracted-image-16.webp" class="w-28 md:w-36 flex-shrink-0 aspect-[9/16] object-cover rounded-xl border border-slate-200 dark:border-white/10 shadow-sm hover:scale-105 hover:z-10 transition-transform duration-300" alt="proof 3" width="420" height="738"> <img loading="lazy" src="assets/images/extracted-image-17.webp" class="w-28 md:w-36 flex-shrink-0 aspect-[9/16] object-cover rounded-xl border border-slate-200 dark:border-white/10 shadow-sm hover:scale-105 hover:z-10 transition-transform duration-300" alt="proof 4" width="420" height="723"> <img loading="lazy" src="assets/images/extracted-image-18.webp" class="w-28 md:w-36 flex-shrink-0 aspect-[9/16] object-cover rounded-xl border border-slate-200 dark:border-white/10 shadow-sm hover:scale-105 hover:z-10 transition-transform duration-300" alt="proof 6" width="420" height="746"> <img loading="lazy" src="assets/images/extracted-image-19.webp" class="w-28 md:w-36 flex-shrink-0 aspect-[9/16] object-cover rounded-xl border border-slate-200 dark:border-white/10 shadow-sm hover:scale-105 hover:z-10 transition-transform duration-300" alt="proof 7" width="420" height="749"> <img loading="lazy" src="assets/images/extracted-image-20.webp" class="w-28 md:w-36 flex-shrink-0 aspect-[9/16] object-cover rounded-xl border border-slate-200 dark:border-white/10 shadow-sm hover:scale-105 hover:z-10 transition-transform duration-300" alt="proof 8" width="420" height="726"> <img loading="lazy" src="assets/images/extracted-image-21.webp" class="w-28 md:w-36 flex-shrink-0 aspect-[9/16] object-cover rounded-xl border border-slate-200 dark:border-white/10 shadow-sm hover:scale-105 hover:z-10 transition-transform duration-300" alt="proof 9" width="420" height="694"> <img loading="lazy" src="assets/images/extracted-image-22.webp" class="w-28 md:w-36 flex-shrink-0 aspect-[9/16] object-cover rounded-xl border border-slate-200 dark:border-white/10 shadow-sm hover:scale-105 hover:z-10 transition-transform duration-300" alt="proof 10" width="420" height="745"> <img loading="lazy" src="assets/images/extracted-image-23.webp" class="w-28 md:w-36 flex-shrink-0 aspect-[9/16] object-cover rounded-xl border border-slate-200 dark:border-white/10 shadow-sm hover:scale-105 hover:z-10 transition-transform duration-300" alt="proof 11" width="420" height="746"> <img loading="lazy" src="assets/images/extracted-image-24.webp" class="w-28 md:w-36 flex-shrink-0 aspect-[9/16] object-cover rounded-xl border border-slate-200 dark:border-white/10 shadow-sm hover:scale-105 hover:z-10 transition-transform duration-300" alt="proof 12" width="420" height="556">
+                        <!-- Set 2 (for seamless loop) -->
+                        <img loading="lazy" src="assets/images/extracted-image-14.webp" class="w-28 md:w-36 flex-shrink-0 aspect-[9/16] object-cover rounded-xl border border-slate-200 dark:border-white/10 shadow-sm hover:scale-105 hover:z-10 transition-transform duration-300" alt="proof 1" width="420" height="733"> <img loading="lazy" src="assets/images/extracted-image-15.webp" class="w-28 md:w-36 flex-shrink-0 aspect-[9/16] object-cover rounded-xl border border-slate-200 dark:border-white/10 shadow-sm hover:scale-105 hover:z-10 transition-transform duration-300" alt="proof 2" width="420" height="767"> <img loading="lazy" src="assets/images/extracted-image-16.webp" class="w-28 md:w-36 flex-shrink-0 aspect-[9/16] object-cover rounded-xl border border-slate-200 dark:border-white/10 shadow-sm hover:scale-105 hover:z-10 transition-transform duration-300" alt="proof 3" width="420" height="738"> <img loading="lazy" src="assets/images/extracted-image-17.webp" class="w-28 md:w-36 flex-shrink-0 aspect-[9/16] object-cover rounded-xl border border-slate-200 dark:border-white/10 shadow-sm hover:scale-105 hover:z-10 transition-transform duration-300" alt="proof 4" width="420" height="723"> <img loading="lazy" src="assets/images/extracted-image-18.webp" class="w-28 md:w-36 flex-shrink-0 aspect-[9/16] object-cover rounded-xl border border-slate-200 dark:border-white/10 shadow-sm hover:scale-105 hover:z-10 transition-transform duration-300" alt="proof 6" width="420" height="746"> <img loading="lazy" src="assets/images/extracted-image-19.webp" class="w-28 md:w-36 flex-shrink-0 aspect-[9/16] object-cover rounded-xl border border-slate-200 dark:border-white/10 shadow-sm hover:scale-105 hover:z-10 transition-transform duration-300" alt="proof 7" width="420" height="749"> <img loading="lazy" src="assets/images/extracted-image-20.webp" class="w-28 md:w-36 flex-shrink-0 aspect-[9/16] object-cover rounded-xl border border-slate-200 dark:border-white/10 shadow-sm hover:scale-105 hover:z-10 transition-transform duration-300" alt="proof 8" width="420" height="726"> <img loading="lazy" src="assets/images/extracted-image-21.webp" class="w-28 md:w-36 flex-shrink-0 aspect-[9/16] object-cover rounded-xl border border-slate-200 dark:border-white/10 shadow-sm hover:scale-105 hover:z-10 transition-transform duration-300" alt="proof 9" width="420" height="694"> <img loading="lazy" src="assets/images/extracted-image-22.webp" class="w-28 md:w-36 flex-shrink-0 aspect-[9/16] object-cover rounded-xl border border-slate-200 dark:border-white/10 shadow-sm hover:scale-105 hover:z-10 transition-transform duration-300" alt="proof 10" width="420" height="745"> <img loading="lazy" src="assets/images/extracted-image-23.webp" class="w-28 md:w-36 flex-shrink-0 aspect-[9/16] object-cover rounded-xl border border-slate-200 dark:border-white/10 shadow-sm hover:scale-105 hover:z-10 transition-transform duration-300" alt="proof 11" width="420" height="746"> <img loading="lazy" src="assets/images/extracted-image-24.webp" class="w-28 md:w-36 flex-shrink-0 aspect-[9/16] object-cover rounded-xl border border-slate-200 dark:border-white/10 shadow-sm hover:scale-105 hover:z-10 transition-transform duration-300" alt="proof 12" width="420" height="556">
+                    </div>
+                    <!-- Fade edges -->
+                    <div class="absolute inset-y-0 left-0 w-12 md:w-24 bg-gradient-to-r from-slate-50 dark:from-obsidian to-transparent pointer-events-none z-10"></div>
+                    <div class="absolute inset-y-0 right-0 w-12 md:w-24 bg-gradient-to-l from-slate-50 dark:from-obsidian to-transparent pointer-events-none z-10"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. How It Works -->
+    <section id="workflow" class="py-10 md:py-32 relative z-20 overflow-hidden">
+        <div class="max-w-5xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-24" data-aos="fade-up">
+                <div class="flex items-center justify-center gap-2 mb-4">
+                    <div class="h-px w-8 bg-olive-500"></div>
+                    <h2 class="text-xs font-bold text-olive-600 dark:text-olive-400 tracking-[0.2em] uppercase" data-en="The Process" data-ar="طريقة العمل">The Process</h2>
+                    <div class="h-px w-8 bg-olive-500"></div>
+                </div>
+                <h3 class="text-4xl md:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight" data-en="From Brief to Viral." data-ar="من البريف للفيرال.">From Brief to Viral.</h3>
+            </div>
+
+            <div class="relative">
+                <!-- Track Line -->
+                <div class="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-1 bg-slate-200 dark:bg-white/5 rounded-full -translate-x-1/2"></div>
+                <div class="absolute left-[28px] md:left-1/2 top-0 h-1/3 w-1 bg-gradient-to-b from-olive-600 to-olive-400 rounded-full -translate-x-1/2 shadow-[0_0_15px_#81a25e]"></div>
+
+                <div class="space-y-16">
+                    <!-- Step 1 -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group" data-aos="fade-up">
+                        <div class="flex items-center justify-center w-14 h-14 rounded-full border-4 border-slate-50 dark:border-obsidian bg-slate-200 dark:bg-white/10 text-slate-800 dark:text-white font-extrabold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 backdrop-blur-md group-hover:bg-olive-500 group-hover:text-white group-hover:scale-110 transition-all duration-300">
+                            01
+                        </div>
+                        <div class="w-[calc(100%-5rem)] md:w-[calc(50%-4rem)] spotlight-card p-8 md:group-odd:text-right">
+                            <h4 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">The Brief</h4>
+                            <p class="text-slate-600 dark:text-slate-400 text-base font-light">You share the product or digital item, your primary goal, and any visual references.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group" data-aos="fade-up">
+                        <div class="flex items-center justify-center w-14 h-14 rounded-full border-4 border-slate-50 dark:border-obsidian bg-olive-600 text-white font-extrabold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-[0_0_20px_rgba(98,132,64,0.5)] group-hover:scale-110 transition-all duration-300">
+                            02
+                        </div>
+                        <div class="w-[calc(100%-5rem)] md:w-[calc(50%-4rem)] spotlight-card p-8 md:group-odd:text-right border-olive-500/30">
+                            <h4 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">Hook & Script</h4>
+                            <p class="text-slate-600 dark:text-slate-400 text-base font-light">We build the hook together based on your brand psychology. Full script written and approved.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group" data-aos="fade-up">
+                        <div class="flex items-center justify-center w-14 h-14 rounded-full border-4 border-slate-50 dark:border-obsidian bg-slate-200 dark:bg-white/10 text-slate-800 dark:text-white font-extrabold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 backdrop-blur-md group-hover:bg-olive-500 group-hover:text-white group-hover:scale-110 transition-all duration-300">
+                            03
+                        </div>
+                        <div class="w-[calc(100%-5rem)] md:w-[calc(50%-4rem)] spotlight-card p-8 md:group-odd:text-right">
+                            <h4 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">The Shoot</h4>
+                            <p class="text-slate-600 dark:text-slate-400 text-base font-light">Filmed on location or product-focused. Emphasizing angles and high-retention visuals.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group" data-aos="fade-up">
+                        <div class="flex items-center justify-center w-14 h-14 rounded-full border-4 border-slate-50 dark:border-obsidian bg-slate-200 dark:bg-white/10 text-slate-800 dark:text-white font-extrabold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 backdrop-blur-md group-hover:bg-olive-500 group-hover:text-white group-hover:scale-110 transition-all duration-300">
+                            04
+                        </div>
+                        <div class="w-[calc(100%-5rem)] md:w-[calc(50%-4rem)] spotlight-card p-8 md:group-odd:text-right">
+                            <h4 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">Edit & Sound Design</h4>
+                            <p class="text-slate-600 dark:text-slate-400 text-base font-light">Full edit, tight pacing, animated captions, and SFX tuned to keep viewers hooked.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Packages Section -->
+    <section id="packages" class="py-16 md:py-32 bg-slate-100 dark:bg-[#0a0a0a] border-y border-slate-200 dark:border-white/5 relative z-20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h3 class="text-4xl md:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-6" data-en="Investment Packages." data-ar="باقات الاستثمار.">Investment Packages.</h3>
+                <p class="text-xl text-slate-600 dark:text-slate-400 font-light max-w-2xl mx-auto mb-10" data-en="Scalable solutions tailored for creators and brands." data-ar="حلول قابلة للتوسع مصممة خصيصاً للصناع والبراندات.">Scalable solutions tailored for creators and brands.</p>
+                
+                <!-- Shoot / Edit Toggle -->
+                <div class="inline-flex items-center p-1.5 bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-full shadow-sm" id="pkg-toggle">
+                    <button onclick="setPkgMode('shoot')" id="btn-shoot" class="px-6 py-2.5 rounded-full text-sm font-bold transition-all bg-olive-600 text-white shadow-md">
+                        <i class="ph-bold ph-camera mr-2"></i><span data-en="With Shooting" data-ar="بالتصوير">With Shooting</span>
+                    </button>
+                    <button onclick="setPkgMode('edit')" id="btn-edit" class="px-6 py-2.5 rounded-full text-sm font-bold transition-all text-slate-600 dark:text-slate-300">
+                        <i class="ph-bold ph-scissors mr-2"></i><span data-en="Edit Only (No Shoot)" data-ar="مونتاج فقط (بدون تصوير)">Edit Only (No Shoot)</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Day Packages -->
+            <div class="mb-8">
+                <div class="flex items-center gap-4 mb-10">
+                    <div class="w-12 h-12 rounded-xl bg-olive-100 dark:bg-olive-900/50 flex items-center justify-center">
+                        <i class="ph-fill ph-sun text-2xl text-olive-600 dark:text-olive-400"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-slate-900 dark:text-white tracking-tight" id="day-pkg-title" data-en-shoot="Day Shoot Packages" data-ar-shoot="باقات تصوير اليوم" data-en-edit="Edit Only Packages" data-ar-edit="باقات المونتاج فقط">Day Packages</h3>
+                </div>
+                
+                <div class="grid lg:grid-cols-3 gap-8 pt-6 overflow-visible" id="day-pkg-grid">
+                    <!-- Basic -->
+                    <div class="spotlight-card p-10 flex flex-col" data-aos="fade-up" data-aos-delay="100" id="day-basic-card">
+                        <h4 class="text-2xl font-extrabold text-slate-900 dark:text-white mb-2" data-en="Basic" data-ar="الأساسية">Basic</h4>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-6 font-medium shoot-label" data-en="1 reel · shoot + edit" data-ar="ريل واحد · تصوير + مونتاج">1 reel · shoot + edit</p>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-6 font-medium edit-label hidden" data-en="1 reel · edit only" data-ar="ريل واحد · مونتاج فقط">1 reel · edit only</p>
+                        <ul class="space-y-4 mb-10 flex-1">
+                            <li class="flex items-start gap-3 text-slate-700 dark:text-slate-300"><i class="ph-bold ph-check text-olive-500 mt-1 shrink-0"></i> <span data-en="1 high-quality reel" data-ar="ريل واحد عالي الجودة">1 high-quality reel</span></li>
+                            <li class="flex items-start gap-3 text-slate-700 dark:text-slate-300 shoot-item"><i class="ph-bold ph-check text-olive-500 mt-1 shrink-0"></i> <span data-en="Professional Shooting" data-ar="تصوير احترافي">Professional Shooting</span></li>
+                            <li class="flex items-start gap-3 text-slate-700 dark:text-slate-300"><i class="ph-bold ph-check text-olive-500 mt-1 shrink-0"></i> <span data-en="Standard Editing" data-ar="مونتاج عادي">Standard Editing</span></li>
+                            <li class="flex items-start gap-3 text-slate-700 dark:text-slate-300"><i class="ph-bold ph-check text-olive-500 mt-1 shrink-0"></i> <span data-en="Captions & Sound design" data-ar="ترجمة وتصميم صوتي">Captions & Sound design</span></li>
+                            <li class="flex items-start gap-3 text-slate-700 dark:text-slate-300 edit-item hidden"><i class="ph-bold ph-check text-olive-500 mt-1 shrink-0"></i> <span data-en="Send raw footage, get polished reel" data-ar="ابعت الفيديو الخام واستلم ريل جاهز">Send raw footage, get polished reel</span></li>
+                        </ul>
+                        <a href="#contact" class="w-full py-4 rounded-xl font-bold text-slate-800 dark:text-white text-center bg-slate-200 hover:bg-slate-300 dark:bg-white/5 dark:hover:bg-white/10 transition-all" data-en="Select Basic" data-ar="اختر الأساسية">Select Basic</a>
+                    </div>
+                    
+                    <!-- Growth (Popular) -->
+                    <div class="spotlight-card p-10 pt-8 flex flex-col relative border-2 border-olive-500 shadow-[0_0_30px_rgba(98,132,64,0.15)] z-10" data-aos="fade-up" data-aos-delay="200" id="day-growth-card">
+                        <h4 class="text-2xl font-extrabold text-slate-900 dark:text-white mb-2" data-en="Growth" data-ar="النمو">Growth</h4>
+                        <p class="text-olive-600 dark:text-olive-400 text-sm mb-6 font-bold shoot-label" data-en="2 reels · pro edit + hook" data-ar="ريلين · مونتاج احترافي + هوك">2 reels · pro edit + hook</p>
+                        <p class="text-olive-600 dark:text-olive-400 text-sm mb-6 font-bold edit-label hidden" data-en="2 reels · edit only + hook" data-ar="ريلين · مونتاج فقط + هوك">2 reels · edit only + hook</p>
+                        <ul class="space-y-4 mb-10 flex-1">
+                            <li class="flex items-start gap-3 text-slate-800 dark:text-white font-medium"><i class="ph-fill ph-check-circle text-olive-500 mt-1 shrink-0"></i> <span data-en="2 high-quality reels" data-ar="ريلين عالي الجودة">2 high-quality reels</span></li>
+                            <li class="flex items-start gap-3 text-slate-800 dark:text-white font-medium shoot-item"><i class="ph-fill ph-check-circle text-olive-500 mt-1 shrink-0"></i> <span data-en="Shoot + Pro Edit" data-ar="تصوير + مونتاج احترافي">Shoot + Pro Edit</span></li>
+                            <li class="flex items-start gap-3 text-slate-800 dark:text-white font-medium edit-item hidden"><i class="ph-fill ph-check-circle text-olive-500 mt-1 shrink-0"></i> <span data-en="Pro editing from your footage" data-ar="مونتاج احترافي من الفيديو بتاعك">Pro editing from your footage</span></li>
+                            <li class="flex items-start gap-3 text-slate-800 dark:text-white font-medium"><i class="ph-fill ph-check-circle text-olive-500 mt-1 shrink-0"></i> <span data-en="Hook writing (built with you)" data-ar="كتابة هوك (بالتعاون معاك)">Hook writing (built with you)</span></li>
+                            <li class="flex items-start gap-3 text-slate-800 dark:text-white font-medium"><i class="ph-fill ph-check-circle text-olive-500 mt-1 shrink-0"></i> <span data-en="Captions, SFX & Sound" data-ar="ترجمة ومؤثرات صوتية">Captions, SFX & Sound</span></li>
+                            <li class="flex items-start gap-3 text-slate-800 dark:text-white font-medium"><i class="ph-fill ph-check-circle text-olive-500 mt-1 shrink-0"></i> <span data-en="Ready to publish" data-ar="جاهز للنشر">Ready to publish</span></li>
+                        </ul>
+                        <a href="#contact" class="w-full py-4 rounded-xl font-bold text-white text-center bg-olive-600 hover:bg-olive-700 shadow-lg transition-all" data-en="Select Growth" data-ar="اختر النمو">Select Growth</a>
+                    </div>
+                    
+                    <!-- Business -->
+                    <div class="spotlight-card p-10 flex flex-col" data-aos="fade-up" data-aos-delay="300" id="day-business-card">
+                        <h4 class="text-2xl font-extrabold text-slate-900 dark:text-white mb-2" data-en="Business" data-ar="الاحترافية">Business</h4>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-6 font-medium shoot-label" data-en="3 reels · multi-angle" data-ar="3 ريلات · زوايا متعددة">3 reels · multi-angle</p>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-6 font-medium edit-label hidden" data-en="3 reels · full pro edit" data-ar="3 ريلات · مونتاج احترافي كامل">3 reels · full pro edit</p>
+                        <ul class="space-y-4 mb-10 flex-1">
+                            <li class="flex items-start gap-3 text-slate-700 dark:text-slate-300"><i class="ph-bold ph-check text-olive-500 mt-1 shrink-0"></i> <span data-en="3 high-quality reels" data-ar="3 ريلات عالية الجودة">3 high-quality reels</span></li>
+                            <li class="flex items-start gap-3 text-slate-700 dark:text-slate-300 shoot-item"><i class="ph-bold ph-check text-olive-500 mt-1 shrink-0"></i> <span data-en="Multi-angle shooting" data-ar="تصوير بزوايا متعددة">Multi-angle shooting</span></li>
+                            <li class="flex items-start gap-3 text-slate-700 dark:text-slate-300 edit-item hidden"><i class="ph-bold ph-check text-olive-500 mt-1 shrink-0"></i> <span data-en="Advanced editing from your footage" data-ar="مونتاج متقدم من الفيديو بتاعك">Advanced editing from your footage</span></li>
+                            <li class="flex items-start gap-3 text-slate-700 dark:text-slate-300"><i class="ph-bold ph-check text-olive-500 mt-1 shrink-0"></i> <span data-en="Pro editing & Sound design" data-ar="مونتاج احترافي وتصميم صوتي">Pro editing & Sound design</span></li>
+                            <li class="flex items-start gap-3 text-slate-700 dark:text-slate-300"><i class="ph-bold ph-check text-olive-500 mt-1 shrink-0"></i> <span data-en="Hook writing (built with you)" data-ar="كتابة هوك (بالتعاون معاك)">Hook writing (built with you)</span></li>
+                            <li class="flex items-start gap-3 text-slate-700 dark:text-slate-300"><i class="ph-bold ph-check text-olive-500 mt-1 shrink-0"></i> <span data-en="Captions & Ready to publish" data-ar="ترجمة وجاهز للنشر">Captions & Ready to publish</span></li>
+                        </ul>
+                        <a href="#contact" class="w-full py-4 rounded-xl font-bold text-slate-800 dark:text-white text-center bg-slate-200 hover:bg-slate-300 dark:bg-white/5 dark:hover:bg-white/10 transition-all" data-en="Select Business" data-ar="اختر الاحترافية">Select Business</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Monthly Packages -->
+            <div class="mt-20">
+                <div class="flex items-center gap-4 mb-10">
+                    <div class="w-12 h-12 rounded-xl bg-olive-100 dark:bg-olive-900/50 flex items-center justify-center">
+                        <i class="ph-fill ph-calendar-check text-2xl text-olive-600 dark:text-olive-400"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-slate-900 dark:text-white tracking-tight" data-en="Monthly Packages" data-ar="الباقات الشهرية">Monthly Packages</h3>
+                </div>
+                <div class="grid lg:grid-cols-3 gap-8 pt-6 overflow-visible">
+                    <div class="spotlight-card p-10 flex flex-col" data-aos="fade-up" data-aos-delay="100">
+                        <h4 class="text-2xl font-extrabold text-slate-900 dark:text-white mb-1" data-en="8 Videos" data-ar="8 فيديوهات">8 Videos</h4>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-2 font-medium shoot-label" data-en="3 shoot days / month" data-ar="3 أيام تصوير / شهر">3 shoot days / month</p>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-2 font-medium edit-label hidden" data-en="Edit only / month" data-ar="مونتاج فقط / شهر">Edit only / month</p>
+                        <ul class="space-y-4 mb-10 flex-1 mt-6">
+                            <li class="flex items-start gap-3 text-slate-700 dark:text-slate-300"><i class="ph-bold ph-check text-olive-500 mt-1 shrink-0"></i> <span data-en="8 reels delivered" data-ar="تسليم 8 ريلات">8 reels delivered</span></li>
+                            <li class="flex items-start gap-3 text-slate-700 dark:text-slate-300 shoot-item"><i class="ph-bold ph-check text-olive-500 mt-1 shrink-0"></i> <span data-en="3 shoot days included" data-ar="يشمل 3 أيام تصوير">3 shoot days included</span></li>
+                            <li class="flex items-start gap-3 text-slate-700 dark:text-slate-300 edit-item hidden"><i class="ph-bold ph-check text-olive-500 mt-1 shrink-0"></i> <span data-en="Send raw footage each week" data-ar="ابعت الفيديو الخام كل أسبوع">Send raw footage each week</span></li>
+                            <li class="flex items-start gap-3 text-slate-700 dark:text-slate-300"><i class="ph-bold ph-check text-olive-500 mt-1 shrink-0"></i> <span data-en="Hook + Editing + Captions" data-ar="هوك + مونتاج + ترجمة">Hook + Editing + Captions</span></li>
+                            <li class="flex items-start gap-3 text-slate-700 dark:text-slate-300"><i class="ph-bold ph-check text-olive-500 mt-1 shrink-0"></i> <span data-en="Ready to publish" data-ar="جاهز للنشر">Ready to publish</span></li>
+                        </ul>
+                        <a href="#contact" class="w-full py-4 rounded-xl font-bold text-slate-800 dark:text-white text-center bg-slate-200 hover:bg-slate-300 dark:bg-white/5 dark:hover:bg-white/10 transition-all" data-en="Select Plan" data-ar="اختر الباقة">Select Plan</a>
+                    </div>
+                    <!-- 12 videos -->
+                    <div class="spotlight-card p-10 pt-8 flex flex-col relative border-2 border-olive-500 shadow-[0_0_30px_rgba(98,132,64,0.15)] z-10" data-aos="fade-up" data-aos-delay="200">
+                        <h4 class="text-2xl font-extrabold text-slate-900 dark:text-white mb-1" data-en="12 Videos" data-ar="12 فيديو">12 Videos</h4>
+                        <p class="text-olive-600 dark:text-olive-400 text-sm mb-2 font-bold shoot-label" data-en="4 shoot days / month" data-ar="4 أيام تصوير / شهر">4 shoot days / month</p>
+                        <p class="text-olive-600 dark:text-olive-400 text-sm mb-2 font-bold edit-label hidden" data-en="Edit only / month" data-ar="مونتاج فقط / شهر">Edit only / month</p>
+                        <ul class="space-y-4 mb-10 flex-1 mt-6">
+                            <li class="flex items-start gap-3 text-slate-800 dark:text-white font-medium"><i class="ph-fill ph-check-circle text-olive-500 mt-1 shrink-0"></i> <span data-en="12 reels delivered" data-ar="تسليم 12 ريل">12 reels delivered</span></li>
+                            <li class="flex items-start gap-3 text-slate-800 dark:text-white font-medium shoot-item"><i class="ph-fill ph-check-circle text-olive-500 mt-1 shrink-0"></i> <span data-en="4 shoot days included" data-ar="يشمل 4 أيام تصوير">4 shoot days included</span></li>
+                            <li class="flex items-start gap-3 text-slate-800 dark:text-white font-medium edit-item hidden"><i class="ph-fill ph-check-circle text-olive-500 mt-1 shrink-0"></i> <span data-en="Send raw footage each week" data-ar="ابعت الفيديو الخام كل أسبوع">Send raw footage each week</span></li>
+                            <li class="flex items-start gap-3 text-slate-800 dark:text-white font-medium"><i class="ph-fill ph-check-circle text-olive-500 mt-1 shrink-0"></i> <span data-en="Hook + Editing + Captions" data-ar="هوك + مونتاج + ترجمة">Hook + Editing + Captions</span></li>
+                            <li class="flex items-start gap-3 text-slate-800 dark:text-white font-medium"><i class="ph-fill ph-check-circle text-olive-500 mt-1 shrink-0"></i> <span data-en="Sound design & SFX" data-ar="تصميم صوتي ومؤثرات">Sound design & SFX</span></li>
+                            <li class="flex items-start gap-3 text-slate-800 dark:text-white font-medium"><i class="ph-fill ph-check-circle text-olive-500 mt-1 shrink-0"></i> <span data-en="Ready to publish" data-ar="جاهز للنشر">Ready to publish</span></li>
+                        </ul>
+                        <a href="#contact" class="w-full py-4 rounded-xl font-bold text-white text-center bg-olive-600 hover:bg-olive-700 shadow-lg transition-all" data-en="Select Plan" data-ar="اختر الباقة">Select Plan</a>
+                    </div>
+                    <!-- 15 videos -->
+                    <div class="spotlight-card p-10 flex flex-col" data-aos="fade-up" data-aos-delay="300">
+                        <h4 class="text-2xl font-extrabold text-slate-900 dark:text-white mb-1" data-en="15 Videos" data-ar="15 فيديو">15 Videos</h4>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-2 font-medium shoot-label" data-en="5 shoot days / month" data-ar="5 أيام تصوير / شهر">5 shoot days / month</p>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-2 font-medium edit-label hidden" data-en="Edit only / month" data-ar="مونتاج فقط / شهر">Edit only / month</p>
+                        <ul class="space-y-4 mb-10 flex-1 mt-6">
+                            <li class="flex items-start gap-3 text-slate-700 dark:text-slate-300"><i class="ph-bold ph-check text-olive-500 mt-1 shrink-0"></i> <span data-en="15 reels delivered" data-ar="تسليم 15 ريل">15 reels delivered</span></li>
+                            <li class="flex items-start gap-3 text-slate-700 dark:text-slate-300 shoot-item"><i class="ph-bold ph-check text-olive-500 mt-1 shrink-0"></i> <span data-en="5 shoot days included" data-ar="يشمل 5 أيام تصوير">5 shoot days included</span></li>
+                            <li class="flex items-start gap-3 text-slate-700 dark:text-slate-300 edit-item hidden"><i class="ph-bold ph-check text-olive-500 mt-1 shrink-0"></i> <span data-en="Send raw footage each week" data-ar="ابعت الفيديو الخام كل أسبوع">Send raw footage each week</span></li>
+                            <li class="flex items-start gap-3 text-slate-700 dark:text-slate-300"><i class="ph-bold ph-check text-olive-500 mt-1 shrink-0"></i> <span data-en="Full pro features" data-ar="كل المميزات الاحترافية">Full pro features</span></li>
+                            <li class="flex items-start gap-3 text-slate-700 dark:text-slate-300"><i class="ph-bold ph-check text-olive-500 mt-1 shrink-0"></i> <span data-en="Hook + Editing + Captions" data-ar="هوك + مونتاج + ترجمة">Hook + Editing + Captions</span></li>
+                            <li class="flex items-start gap-3 text-slate-700 dark:text-slate-300"><i class="ph-bold ph-check text-olive-500 mt-1 shrink-0"></i> <span data-en="Sound design & SFX" data-ar="تصميم صوتي ومؤثرات">Sound design & SFX</span></li>
+                            <li class="flex items-start gap-3 text-slate-700 dark:text-slate-300"><i class="ph-bold ph-check text-olive-500 mt-1 shrink-0"></i> <span data-en="Ready to publish" data-ar="جاهز للنشر">Ready to publish</span></li>
+                        </ul>
+                        <a href="#contact" class="w-full py-4 rounded-xl font-bold text-slate-800 dark:text-white text-center bg-slate-200 hover:bg-slate-300 dark:bg-white/5 dark:hover:bg-white/10 transition-all" data-en="Select Plan" data-ar="اختر الباقة">Select Plan</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add-ons note -->
+            <div class="mt-16 spotlight-card p-8 flex flex-col md:flex-row gap-6 md:items-center justify-between" data-aos="fade-up">
+                <div>
+                    <p class="font-bold text-slate-900 dark:text-white mb-1" data-en="Add-on Services" data-ar="خدمات إضافية">Add-on Services</p>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm" data-en="Full script writing or advanced content development available on any package." data-ar="كتابة سكريبت كامل أو تطوير محتوى متقدم متاح على أي باقة.">Full script writing or advanced content development available on any package.</p>
+                </div>
+                <div class="flex gap-4 text-sm shrink-0">
+                    <span class="px-4 py-2 rounded-full bg-olive-100 dark:bg-olive-900/40 text-olive-700 dark:text-olive-300 font-semibold" data-en="Script writing · per video" data-ar="كتابة سكريبت · لكل فيديو">Script writing · per video</span>
+                    <span class="px-4 py-2 rounded-full bg-slate-200 dark:bg-white/5 text-slate-700 dark:text-slate-300 font-semibold" data-en="Advanced ideas · per video" data-ar="أفكار متقدمة · لكل فيديو">Advanced ideas · per video</span>
+                </div>
+            </div>
+        </div>
+
+        <script>
+        let currentPkgMode = 'shoot';
+        function setPkgMode(mode) {
+            currentPkgMode = mode;
+            const shootItems = document.querySelectorAll('.shoot-item, .shoot-label');
+            const editItems  = document.querySelectorAll('.edit-item, .edit-label');
+            const btnShoot   = document.getElementById('btn-shoot');
+            const btnEdit    = document.getElementById('btn-edit');
+            const title      = document.getElementById('day-pkg-title');
+            const growthCard = document.getElementById('day-growth-card');
+            const businessCard = document.getElementById('day-business-card');
+            const grid = document.getElementById('day-pkg-grid');
+            const lang = document.documentElement.getAttribute('lang') === 'ar' ? 'ar' : 'en';
+
+            if (mode === 'shoot') {
+                shootItems.forEach(el => el.classList.remove('hidden'));
+                editItems.forEach(el  => el.classList.add('hidden'));
+                btnShoot.classList.add('bg-olive-600','text-white','shadow-md');
+                btnShoot.classList.remove('text-slate-600','dark:text-slate-300');
+                btnEdit.classList.remove('bg-olive-600','text-white','shadow-md');
+                btnEdit.classList.add('text-slate-600','dark:text-slate-300');
+                title.textContent = title.getAttribute('data-' + lang + '-shoot');
+                growthCard.classList.remove('hidden');
+                businessCard.classList.remove('hidden');
+                grid.classList.remove('lg:grid-cols-1','max-w-md','mx-auto');
+                grid.classList.add('lg:grid-cols-3');
+            } else {
+                editItems.forEach(el  => el.classList.remove('hidden'));
+                shootItems.forEach(el => el.classList.add('hidden'));
+                btnEdit.classList.add('bg-olive-600','text-white','shadow-md');
+                btnEdit.classList.remove('text-slate-600','dark:text-slate-300');
+                btnShoot.classList.remove('bg-olive-600','text-white','shadow-md');
+                btnShoot.classList.add('text-slate-600','dark:text-slate-300');
+                title.textContent = title.getAttribute('data-' + lang + '-edit');
+                growthCard.classList.add('hidden');
+                businessCard.classList.add('hidden');
+                grid.classList.remove('lg:grid-cols-3');
+                grid.classList.add('lg:grid-cols-1','max-w-md','mx-auto');
+            }
+        }
+        </script>
+    </section>
+
+    <!-- 8. Final CTA -->
+    <section id="contact" class="py-16 md:py-32 px-4 sm:px-6 lg:px-8 relative z-20 overflow-hidden">
+        <!-- Intense Glow -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-olive-500/10 dark:bg-olive-500/20 blur-[100px] rounded-full pointer-events-none transition-colors"></div>
+        
+        <div class="max-w-4xl mx-auto spotlight-card rounded-[2.5rem] p-12 lg:p-20 text-center relative z-10" data-aos="zoom-in">
+            <div class="w-20 h-20 mx-auto bg-gradient-to-br from-olive-600 to-olive-400 rounded-full flex items-center justify-center mb-8 shadow-lg">
+                <i class="ph-fill ph-paper-plane-tilt text-3xl text-white"></i>
+            </div>
+            <h2 class="text-5xl md:text-7xl font-extrabold text-slate-900 dark:text-white mb-6 tracking-tight"><span data-en="Ready to go" data-ar="جاهز تبقى">Ready to go</span> <span class="text-gradient" data-en="Viral?" data-ar="فايرال؟">Viral?</span></h2>
+            <p class="text-xl text-slate-600 dark:text-slate-400 mb-12 max-w-2xl mx-auto font-light" data-en="Book a discovery call or send an email to build a tailored content pipeline for your brand." data-ar="احجز مكالمة تعارف أو ابعت إيميل عشان نبني خطة محتوى مخصصة لبراندك.">Book a discovery call or send an email to build a tailored content pipeline for your brand.</p>
+            
+            <div class="flex flex-col sm:flex-row gap-5 justify-center">
+                <a href="mailto:hweedyramadan@gmail.com" class="px-8 py-5 bg-olive-600 text-white hover:bg-olive-700 font-extrabold rounded-full transition-colors shadow-lg flex items-center justify-center gap-2 text-lg">
+                    <span data-en="Email Me" data-ar="ابعتلي إيميل">Email Me</span> <i class="ph-bold ph-arrow-up-right"></i>
+                </a>
+                <a href="https://www.instagram.com/freedaan_20" target="_blank" class="px-8 py-5 bg-slate-200 dark:bg-white/5 text-slate-800 dark:text-white hover:bg-slate-300 dark:hover:bg-white/10 font-bold rounded-full transition-colors flex items-center justify-center gap-2 text-lg">
+                    <i class="ph-fill ph-instagram-logo text-4xl text-amber-500"></i> <span data-en="DM on Instagram" data-ar="راسلني على إنستجرام">DM on Instagram</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Footer -->
+    
+    <!-- Featured Work / Videos -->
+    <section id="featured-work" class="py-24 relative z-10">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-5xl font-bold text-obsidian dark:text-white mb-6">
+                    Featured <span class="text-olive-500">Work</span>
+                </h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    A selection of my best edits and reels.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+                <!-- Short 1 -->
+                <div class="spotlight-card rounded-3xl p-1 bg-white/5 dark:bg-white/5 border border-white/10 overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative w-full rounded-2xl overflow-hidden aspect-[9/16] pointer-events-none">
+                        <iframe class="absolute top-0 left-0 w-full h-[120%] -translate-y-[10%]" src="https://www.youtube-nocookie.com/embed/9F8Cu9RpLyI?autoplay=1&mute=1&loop=1&playlist=9F8Cu9RpLyI&controls=0&modestbranding=1&playsinline=1&rel=0&disablekb=1" title="Featured Short" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <!-- Short 2 -->
+                <div class="spotlight-card rounded-3xl p-1 bg-white/5 dark:bg-white/5 border border-white/10 overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative w-full rounded-2xl overflow-hidden aspect-[9/16] pointer-events-none">
+                        <iframe class="absolute top-0 left-0 w-full h-[120%] -translate-y-[10%]" src="https://www.youtube-nocookie.com/embed/3fwSat2XyBQ?autoplay=1&mute=1&loop=1&playlist=3fwSat2XyBQ&controls=0&modestbranding=1&playsinline=1&rel=0&disablekb=1" title="Featured Short" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <!-- Short 3 -->
+                <div class="spotlight-card rounded-3xl p-1 bg-white/5 dark:bg-white/5 border border-white/10 overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative w-full rounded-2xl overflow-hidden aspect-[9/16] pointer-events-none">
+                        <iframe class="absolute top-0 left-0 w-full h-[120%] -translate-y-[10%]" src="https://www.youtube-nocookie.com/embed/srr3ZHsY4b8?autoplay=1&mute=1&loop=1&playlist=srr3ZHsY4b8&controls=0&modestbranding=1&playsinline=1&rel=0&disablekb=1" title="Featured Short" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <!-- Short 4 -->
+                <div class="spotlight-card rounded-3xl p-1 bg-white/5 dark:bg-white/5 border border-white/10 overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative w-full rounded-2xl overflow-hidden aspect-[9/16] pointer-events-none">
+                        <iframe class="absolute top-0 left-0 w-full h-[120%] -translate-y-[10%]" src="https://www.youtube-nocookie.com/embed/ztoHJ-t88aE?autoplay=1&mute=1&loop=1&playlist=ztoHJ-t88aE&controls=0&modestbranding=1&playsinline=1&rel=0&disablekb=1" title="Featured Short" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-100 dark:bg-obsidian pt-20 pb-10 border-t border-slate-200 dark:border-white/5 relative z-20 transition-colors">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8 border-b border-slate-300 dark:border-white/5 pb-10 mb-10">
+                <div class="flex items-center gap-3">
+                    <div class="w-14 h-14 rounded-xl bg-transparent flex items-center justify-center overflow-hidden">
+                        <img loading="lazy" src="assets/images/extracted-image-1.webp" alt="Logo" class="w-full h-full object-cover" width="300" height="300">
+                    </div>
+                    <span class="font-extrabold text-2xl tracking-tight text-slate-900 dark:text-white" data-en="Ramadan" data-ar="رمضان">Ramadan</span>
+                </div>
+                
+                <div class="flex items-center gap-6 text-slate-500 dark:text-slate-400">
+                    <a href="https://www.tiktok.com/@eliteperfume244" target="_blank" class="w-14 h-14 rounded-full bg-slate-200 dark:bg-white/5 flex items-center justify-center hover:bg-slate-300 dark:hover:bg-white/10 transition-all"><i class="ph-fill ph-tiktok-logo text-3xl"></i></a>
+                    <a href="https://www.instagram.com/freedaan_20" target="_blank" class="w-14 h-14 rounded-full bg-slate-200 dark:bg-white/5 flex items-center justify-center hover:bg-slate-300 dark:hover:bg-white/10 transition-all"><i class="ph-fill ph-instagram-logo text-3xl"></i></a>
+                    <a href="https://linktr.ee/ramadanzsc" target="_blank" class="w-14 h-14 rounded-full bg-slate-200 dark:bg-white/5 flex items-center justify-center hover:bg-slate-300 dark:hover:bg-white/10 transition-all"><i class="ph-bold ph-link-simple text-3xl"></i></a>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-600 dark:text-slate-500 text-sm font-medium text-center md:text-left" data-en="UGC Creator, Video Editor & Content Producer." data-ar="صانع محتوى UGC، مونتير فيديو، ومنتج محتوى.">
+                    UGC Creator, Video Editor & Content Producer.
+                </p>
+                <p class="text-slate-500 dark:text-slate-600 text-sm">
+                    © 2026 Ramadan Hweedy. <span data-en="All rights reserved." data-ar="جميع الحقوق محفوظة.">All rights reserved.</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script>
+        // 1. Initialize Animations
+        window.addEventListener('load', () => AOS.init({ once: true, offset: 50, duration: 800, easing: 'ease-out-cubic' }));
+
+        // 2. Theme Toggle Logic
+        const themeToggleBtns = [document.getElementById('theme-toggle'), document.getElementById('theme-toggle-mobile')];
+        const darkIcons = [document.getElementById('theme-toggle-dark-icon'), document.getElementById('theme-toggle-dark-icon-mobile')];
+        const lightIcons = [document.getElementById('theme-toggle-light-icon'), document.getElementById('theme-toggle-light-icon-mobile')];
+
+        // Update icons based on current theme
+        function updateIcons() {
+            if (document.documentElement.classList.contains('dark')) {
+                darkIcons.forEach(icon => icon?.classList.add('hidden'));
+                lightIcons.forEach(icon => icon?.classList.remove('hidden'));
+            } else {
+                lightIcons.forEach(icon => icon?.classList.add('hidden'));
+                darkIcons.forEach(icon => icon?.classList.remove('hidden'));
+            }
+        }
+
+        // Run on load
+        updateIcons();
+
+        // Toggle Event
+        themeToggleBtns.forEach(btn => {
+            if(!btn) return;
+            btn.addEventListener('click', function() {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+                updateIcons();
+            });
+        });
+
+        // 2b. Language Toggle Logic (EN <-> AR, like a night-mode switch)
+        function applyLanguage(lang) {
+            document.documentElement.setAttribute('lang', lang);
+            document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+            document.querySelectorAll('[data-en]').forEach(el => {
+                const text = lang === 'ar' ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+                if (text !== null) el.textContent = text;
+            });
+            const labelTxt = lang === 'ar' ? 'EN' : 'AR';
+            const lbl1 = document.getElementById('lang-toggle-label');
+            const lbl2 = document.getElementById('lang-toggle-label-mobile');
+            if (lbl1) lbl1.textContent = labelTxt;
+            if (lbl2) lbl2.textContent = labelTxt;
+            localStorage.setItem('site-lang', lang);
+            // Re-apply current package toggle state so day-pkg-title text matches new language
+            if (typeof setPkgMode === 'function' && typeof currentPkgMode !== 'undefined') {
+                setPkgMode(currentPkgMode);
+            }
+        }
+
+        const savedLang = localStorage.getItem('site-lang') || 'en';
+        applyLanguage(savedLang);
+
+        const langToggleBtns = [document.getElementById('lang-toggle'), document.getElementById('lang-toggle-mobile')];
+        langToggleBtns.forEach(btn => {
+            if (!btn) return;
+            btn.addEventListener('click', function() {
+                const next = document.documentElement.getAttribute('lang') === 'ar' ? 'en' : 'ar';
+                applyLanguage(next);
+            });
+        });
+
+
+        // 3. Custom Cursor Logic
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+        window.addEventListener('mousemove', (e) => {
+            document.documentElement.style.setProperty('--cursor-x', e.clientX + 'px');
+            document.documentElement.style.setProperty('--cursor-y', e.clientY + 'px');
+        });
+
+        // 4. Spotlight Card Hover Effect
+        document.querySelectorAll('.spotlight-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+                card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+            });
+        });
+
+        // 5. Sticky Navbar Glass Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('glass-nav');
+                navbar.classList.remove('py-6', 'bg-transparent');
+                navbar.classList.add('py-3');
+            } else {
+                navbar.classList.remove('glass-nav');
+                navbar.classList.add('py-6', 'bg-transparent');
+                navbar.classList.remove('py-3');
+            }
+        });
+
+        // 6. Interactive Particle Canvas (Olive Colors)
+        const canvas = document.getElementById('hero-canvas');
+        const ctx = canvas.getContext('2d');
+        let particlesArray = [];
+        const colors = ['#628440', '#81a25e', '#a6c188']; // Olive Green Tones
+        let mouse = { x: null, y: null, radius: 200 };
+
+        window.addEventListener('mousemove', function(event) {
+            mouse.x = event.x; mouse.y = event.y;
+        });
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        class Particle {
+            constructor(x, y, directionX, directionY, size, color) {
+                this.x = x; this.y = y; this.directionX = directionX; this.directionY = directionY;
+                this.size = size; this.color = color; this.baseX = this.x; this.baseY = this.y;
+                this.density = (Math.random() * 30) + 1;
+            }
+            draw() {
+                ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                ctx.fillStyle = this.color; ctx.fill();
+            }
+            update() {
+                if (this.x > canvas.width || this.x < 0) this.directionX = -this.directionX;
+                if (this.y > canvas.height || this.y < 0) this.directionY = -this.directionY;
+
+                let dx = mouse.x - this.x; let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx*dx + dy*dy);
+                
+                if (distance < mouse.radius) {
+                    const forceDirectionX = dx / distance; const forceDirectionY = dy / distance;
+                    const force = (mouse.radius - distance) / mouse.radius;
+                    this.x -= (forceDirectionX * force * this.density);
+                    this.y -= (forceDirectionY * force * this.density);
+                } else {
+                    if (this.x !== this.baseX) this.x -= (this.x - this.baseX)/25;
+                    if (this.y !== this.baseY) this.y -= (this.y - this.baseY)/25;
+                }
+                this.x += this.directionX * 0.5; this.y += this.directionY * 0.5;
+                this.draw();
+            }
+        }
+
+        function initCanvas() {
+            particlesArray = [];
+            let numberOfParticles = (canvas.height * canvas.width) / 15000;
+            if(numberOfParticles > 100) numberOfParticles = 100; 
+            for (let i = 0; i < numberOfParticles; i++) {
+                let size = (Math.random() * 2) + 1;
+                let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
+                let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
+                let directionX = (Math.random() * 2) - 1; let directionY = (Math.random() * 2) - 1;
+                let color = colors[Math.floor(Math.random() * colors.length)];
+                particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+            }
+        }
+
+        function connect() {
+            let opacityValue = 1;
+            for (let a = 0; a < particlesArray.length; a++) {
+                for (let b = a; b < particlesArray.length; b++) {
+                    let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x))
+                    + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+                    if (distance < (canvas.width/9) * (canvas.height/9)) {
+                        opacityValue = 1 - (distance/20000);
+                        // Subtle olive connection lines
+                        ctx.strokeStyle = `rgba(98, 132, 64, ${opacityValue * 0.1})`;
+                        ctx.lineWidth = 1; ctx.beginPath();
+                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animateCanvas() {
+            requestAnimationFrame(animateCanvas);
+            ctx.clearRect(0,0,canvas.width, canvas.height);
+            for (let i = 0; i < particlesArray.length; i++) particlesArray[i].update();
+            connect();
+        }
+
+        window.addEventListener('load', () => { resizeCanvas(); initCanvas(); animateCanvas(); });
+        window.addEventListener('resize', () => { resizeCanvas(); initCanvas(); });
+        window.addEventListener('mouseout', () => { mouse.x = undefined; mouse.y = undefined; });
+    </script>
+</body>
+</html>

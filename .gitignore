@@ -1,0 +1,5 @@
+node_modules/
+*.py
+package-lock.json
+.gemini/
+*.log
